@@ -5,10 +5,12 @@
 (def render (renderer "wma-clj"))
 
 (defn wma-clj
-  "FIXME: write documentation"
+  "generates a Clojure library project"
   [name]
   (let [data {:name name
               :sanitized (name-to-path name)}]
-    (main/info "Generating fresh 'lein new' wma-clj project.")
+    (main/info "Generating fresh 'lein new' wma-clj 'library' project.")
     (->files data
-             ["src/{{sanitized}}/foo.clj" (render "foo.clj" data)])))
+             ["project.clj" (render "project.clj" data)]
+             ["src/{{sanitized}}/{{sanitized}}.clj" (render "foo.clj" data)]
+             ["test/{{sanitized}}/{{sanitized}}_test.clj" (render "foo_test.clj" data)])))
