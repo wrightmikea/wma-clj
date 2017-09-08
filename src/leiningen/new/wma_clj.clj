@@ -1,27 +1,10 @@
 (ns leiningen.new.wma-clj
-  (:require [leiningen.new.templates :refer [renderer name-to-path ->files]]
-            [leiningen.core.main :as main]))
-
-(def render (renderer "wma-clj"))
+  (:require [wma-clj.gen.lib :as lib]))
 
 (defn clj-cli
   "generates a Clojure CLI project"
   [name]
   (prn "tbd cli" name))
-
-(defn clj-lib
-  "generates a Clojure library project"
-  [name]
-  (prn "tbd lib" name)
-  (let [data {:name name
-                 :sanitized (name-to-path name)}]
-       (main/info "Generating fresh 'lein new' wma-clj 'library' project.")
-       (->files data
-                ["project.clj" (render "lib/project.clj" data)]
-                ["src/{{sanitized}}/{{sanitized}}.clj"
-                 (render "lib/foo.clj" data)]
-                ["test/{{sanitized}}/{{sanitized}}_test.clj"
-                 (render "lib/foo_test.clj" data)])))
 
 (defn cljs-app
   "generates a ClojureScript browser application"
@@ -47,7 +30,7 @@
    (condp = type
      "app" (cljs-app name)
      "cli" (clj-cli name)
-     "lib" (clj-lib name)
+     "lib" (lib/clj-lib name)
      "node-cli" (cljs-cli name)
      "node-lib" (cljs-lib name)
      (prn "unrecognized type" type))))
