@@ -1,3 +1,3 @@
 (ns {{name}}.{{name}})
 
-(def {{name}} :TODO)
+(def {{name}} :TODO-LIB)

@@ -1,5 +1,5 @@
 (defproject {{name}} "0.1.0-SNAPSHOT"
-  :description "FIXME: write library description"
+  :description "FIXME: write CLI description"
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
