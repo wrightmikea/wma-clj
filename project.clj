@@ -1,4 +1,4 @@
-(defproject wma-clj/lein-template "0.2.0-SNAPSHOT"
+(defproject wma-clj/lein-template "0.2.0"
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
