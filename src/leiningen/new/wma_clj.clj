@@ -1,9 +1,10 @@
 (ns leiningen.new.wma-clj
-  (:require [wma-clj.gen.cli :as cli]
+  (:require [wma-clj.gen.app :as app]
+            [wma-clj.gen.cli :as cli]
             [wma-clj.gen.lib :as lib]))
 
-(defn cljs-app
-  "generates a ClojureScript browser application"
+(defn cljs-web
+  "generates a ClojureScript web browser application"
   [name]
   (prn "tbd app" name))
 
@@ -24,9 +25,11 @@
   ([name type & opts]
    (when opts (prn opts))
    (condp = type
-     "app" (cljs-app name)
+     "app" (app/clj-app name)
      "cli" (cli/clj-cli name)
      "lib" (lib/clj-lib name)
      "node-cli" (cljs-cli name)
      "node-lib" (cljs-lib name)
+     "web" (cljs-web name)
      (prn "unrecognized type" type))))
+

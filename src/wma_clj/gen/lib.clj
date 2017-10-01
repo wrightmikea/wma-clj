@@ -11,6 +11,7 @@
         render (renderer "wma-clj")]
        (main/info "Generating fresh 'lein new' wma-clj 'library' project.")
        (->files data
+                [".gitignore" (render "lib/gitignore" data)]
                 ["project.clj" (render "lib/project.clj" data)]
                 ["src/{{sanitized}}/{{sanitized}}.clj"
                  (render "lib/foo.clj" data)]
