@@ -2,14 +2,14 @@
   (:require [leiningen.new.templates :refer [renderer name-to-path ->files]]
             [leiningen.core.main :as main]))
 
-(defn clj-park-client
-  "generates a Clojure park-client project"
+(defn clj-park-filter
+  "generates a Clojure park-filter project"
   [name]
   (prn "tbd park filter " name)
   (let [data {:name name
               :sanitized (name-to-path name)}
         render (renderer "wma-clj")]
-       (main/info "Generating fresh 'lein new' wma-clj 'park client' project.")
+       (main/info "Generating fresh 'lein new' wma-clj 'park filter' project.")
        (->files data
                 [".gitignore" (render "/park/gitignore" data)]
                 ["project.clj" (render "/park/project.clj" data)]
