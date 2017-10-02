@@ -1,22 +1,28 @@
 (ns leiningen.new.wma-clj
   (:require [wma-clj.gen.app :as app]
             [wma-clj.gen.cli :as cli]
+            [wma-clj.gen.park :as park]
             [wma-clj.gen.lib :as lib]))
+
+(defn cljs-cli
+  "generates a ClojureScript node-CLI project"
+  [name]
+  (prn "tbd node-cli" name))
+
+(defn cljs-kafka-client
+  "generates a ClojureScript node-kafka-client project"
+  [name]
+  (prn "tbd node-kafka-client" name))
+
+(defn cljs-lib
+  "generates a ClojureScript node-library project"
+  [name]
+  (prn "tbd node-lib" name))
 
 (defn cljs-web
   "generates a ClojureScript web browser application"
   [name]
-  (prn "tbd app" name))
-
-(defn cljs-cli
-  "generates a ClojureScript CLI project"
-  [name]
-  (prn "tbd node-cli" name))
-
-(defn cljs-lib
-  "generates a ClojureScript Libraru project"
-  [name]
-  (prn "tbd node-lib" name))
+  (prn "tbd web browser app" name))
 
 (defn wma-clj
   "generates a leiningen project"
@@ -30,6 +36,7 @@
      "lib" (lib/clj-lib name)
      "node-cli" (cljs-cli name)
      "node-lib" (cljs-lib name)
+     "park" (park/clj-park-client name)
      "web" (cljs-web name)
      (prn "unrecognized type" type))))
 
