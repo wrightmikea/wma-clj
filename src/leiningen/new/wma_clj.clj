@@ -1,13 +1,9 @@
 (ns leiningen.new.wma-clj
   (:require [wma-clj.gen.app :as app]
             [wma-clj.gen.cli :as cli]
+            [wma-clj.gen.node-cli :as node-cli]
             [wma-clj.gen.park :as park]
             [wma-clj.gen.lib :as lib]))
-
-(defn cljs-cli
-  "generates a ClojureScript node-CLI project"
-  [name]
-  (prn "tbd node-cli" name))
 
 (defn cljs-kafka-client
   "generates a ClojureScript node-kafka-client project"
@@ -34,7 +30,7 @@
      "app" (app/clj-app name)
      "cli" (cli/clj-cli name)
      "lib" (lib/clj-lib name)
-     "node-cli" (cljs-cli name)
+     "node-cli" (node-cli/cljs-node-cli name)
      "node-lib" (cljs-lib name)
      "park" (park/clj-park-client name)
      "web" (cljs-web name)

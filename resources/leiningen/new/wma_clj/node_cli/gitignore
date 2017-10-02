@@ -1,0 +1,16 @@
+*.jar
+.lein-deps-sum
+.lein-failures
+.lein-plugins/
+.lein-repl-history
+.nrepl-port
+/classes/
+/lib/
+/node_modules/
+/out/
+/resources/public/cljs/tests/
+/target/
+figwheel_server.log
+pom.xml
+server.js
+
