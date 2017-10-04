@@ -1,12 +1,14 @@
-(ns {{name}}.core
-  (:require-macros [wma-cljs-macs.wma-cljs-macs :refer [requirejs]])
+(ns ^:figwheel-always {{name}}.core
   (:require [cljs.nodejs :as nodejs]))
 
 (nodejs/enable-util-print!)
 
-(requirejs fs)
+(defn test-me []
+  "{{name}}.core/test-me")
 
-(defn -main []
-  (println "{{name}}.core"))
+(println (test-me))
 
-(set! *main-cli-fn* -main)
+(set! (.-exports js/module) #js {:hello #(println "{{name}} :hello")})
+;;
+(def -main (fn [] nil))
+(set! *main-cli-fn* -main) ;; this is required

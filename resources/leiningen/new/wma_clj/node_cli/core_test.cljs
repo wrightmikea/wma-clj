@@ -3,7 +3,6 @@
             [cljs.test :refer [deftest is testing]]))
 
 (deftest core-test
-  (testing "main"
-    (let [actual (with-out-str
-                   (subject/-main))]
-      (is (= "{{name}}.core\n" actual)))))
+  (testing "test-me"
+    (let [actual (subject/test-me)]
+      (is (= "{{name}}.core/test-me" actual)))))

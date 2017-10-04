@@ -23,30 +23,30 @@
                   "target"]
 
   :cljsbuild {
-    :builds [{:id "dev"
-              :source-paths ["src"]
-              :figwheel true
-              :compiler {
-                :main {{name}}.core
-                :asset-path "target/js/compiled/dev"
-                :output-to "target/js/compiled/{{name}}_node.js"
-                :output-dir "target/js/compiled/dev"
-                :target :nodejs
-                :optimizations :none
-                :source-map-timestamp true}}
-             {:id "prod"
-              :source-paths ["src"]
-              :compiler {
-                :output-to "server.js"
-                :output-dir "target/js/compiled/prod"
-                :target :nodejs
-                         :optimizations :simple}}
-                           {:id "test"
-                :source-paths ["src" "test"]
-               :compiler {
-                 :main {{name}}.test-runner
-                 :output-to "resources/public/cljs/tests/all-tests.js"
-                 :target :nodejs}}]}
+              :builds [
+                       {:id "dev"
+                        :source-paths ["src"]
+                        :figwheel true
+                        :compiler {:main {{name}}.core
+                                   :output-to "target/out/{{sanitized}}_with_figwheel.js"
+                                   :output-dir "target/out"
+                                   :target :nodejs
+                                   :optimizations :none
+                                   :source-map true }}
+                       {:id "prod"
+                        :source-paths ["src"]
+                        :compiler {:main {{name}}.core
+                                   :output-to "target/out/{{sanitized}}.core.js"
+                                   :target :nodejs
+                                   :optimizations :simple ;; notice this!
+                                   }}
+                       {:id "test"
+                        :source-paths ["src" "test"]
+                        :compiler {
+                                   :main {{name}}.test-runner
+                                   :output-to "resources/public/cljs/tests/all-tests.js"
+                                   :output-dir "target/test-out"
+                                   :target :nodejs}}]}
 
   :profiles {:dev {:dependencies [[figwheel-sidecar "0.5.13"]
                                   [com.cemerick/piggieback "0.2.2"]]
