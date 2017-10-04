@@ -18,10 +18,10 @@
                 ["prod.js" (render "node_lib/prod.js" data)]
                 ["project.clj" (render "node_lib/project.clj" data)]
                 ["src/{{sanitized}}/core.cljs"
-                 (render "node_lib/foo.cljs" data)]
+                 (render "node_lib/core.cljs" data)]
                 ["README.md" (render "node_lib/README.md" data)]
                 ["test/{{sanitized}}/core_test.cljs"
-                 (render "node_lib/foo_test.cljs" data)]
+                 (render "node_lib/core_test.cljs" data)]
                 ["test/{{sanitized}}/test_runner.cljs"
                  (render "node_lib/test_runner.cljs" data)])))
 
