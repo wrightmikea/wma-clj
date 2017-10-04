@@ -1,7 +1,7 @@
 (ns {{name}}.test-runner
-  (:require [{{name}}.{{name}}-test]
+  (:require [{{name}}.core-test]
             [doo.runner :refer-macros [doo-tests]]))
 
 (enable-console-print!)
 
-(doo-tests '{{name}}.{{name}}-test)
+(doo-tests '{{name}}.core-test)

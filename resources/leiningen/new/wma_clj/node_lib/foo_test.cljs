@@ -1,8 +1,8 @@
-(ns {{name}}.{{name}}-test
-  (:require [{{name}}.{{name}} :as subject]
+(ns {{name}}.core-test
+  (:require [{{name}}.core :as subject]
             [cljs.test :refer [deftest is testing]]))
 
-(deftest {{name}}-test
-  (testing "{{name}}"
-    (let [actual (subject/{{name}})]
-      (is (= "{{name}}.{{name}}/{{name}}" actual)))))
+(deftest core-test
+  (testing "test-me"
+    (let [actual (subject/test-me)]
+      (is (= "{{name}}.core/test-me" actual)))))
