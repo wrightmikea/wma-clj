@@ -10,4 +10,4 @@
 
 ## production
 
-      $ lein cljsbuild once prod && node prod.js
+      $ lein cljsbuild once prod && chmod +x prod && ./prod

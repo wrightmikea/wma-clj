@@ -15,7 +15,7 @@
                 ["cider-figwheel.el" (render "node_cli/cider_figwheel.el" data)]
                 ["dev.js" (render "node_cli/dev.js" data)]
                 ["package.json" (render "node_cli/package.json" data)]
-                ["prod.js" (render "node_cli/prod.js" data)]
+                ["prod" (render "node_cli/prod" data)]
                 ["project.clj" (render "node_cli/project.clj" data)]
                 ["src/{{sanitized}}/core.cljs"
                  (render "node_cli/core.cljs" data)]

@@ -8,7 +8,7 @@
 
 (println (test-me))
 
-(set! (.-exports js/module) #js {:hello #(println "{{name}} :hello")})
+(set! (.-exports js/module) #js {:hello #(println "{{name}}" %1 ":hello")})
 ;;
 (def -main (fn [] nil))
 (set! *main-cli-fn* -main) ;; this is required
