@@ -11,8 +11,8 @@
         render (renderer "wma-clj")]
        (main/info "Generating fresh 'lein new' wma-clj 'park filter' project.")
        (->files data
-                [".gitignore" (render "/park/gitignore" data)]
-                ["project.clj" (render "/park/project.clj" data)]
+                [".gitignore" (render "park/gitignore" data)]
+                ["project.clj" (render "park/project.clj" data)]
                 ["src/{{sanitized}}/filter.clj"
                  (render "park/clj_park_filter.clj" data)]
                 ["test/{{sanitized}}/filter_test.clj"
