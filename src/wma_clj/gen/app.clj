@@ -9,7 +9,7 @@
   (let [data {:name name
               :sanitized (name-to-path name)}
         render (renderer "wma-clj")]
-       (main/info "Generating fresh 'lein new' wma-clj 'command line' project.")
+       (main/info "Generating fresh 'lein new' wma-clj 'application' project.")
        (->files data
                 [".gitignore" (render "app/gitignore" data)]
                 ["project.clj" (render "app/project.clj" data)]
