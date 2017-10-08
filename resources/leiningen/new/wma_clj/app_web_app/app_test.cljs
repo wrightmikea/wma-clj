@@ -5,5 +5,5 @@
 (deftest app-test
   (testing "main"
     (let [actual (with-out-str
-                   (subject/-main))]
-      (is (= "{{name}}.app/-main\n" actual)))))
+                   (subject/main))]
+      (is (= "{{name}}.app/main\nreloaded\n" actual)))))
