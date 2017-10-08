@@ -1,5 +1,6 @@
 (ns leiningen.new.wma-clj
   (:require [wma-clj.gen.app :as app]
+            [wma-clj.gen.app-web-app :as app-web-app]
             [wma-clj.gen.cli :as cli]
             [wma-clj.gen.node-cli :as node-cli]
             [wma-clj.gen.node-lib :as node-lib]
@@ -20,12 +21,14 @@
    (when opts (prn opts))
    (condp = type
      "app" (app/clj-app name)
+     "app-web-app" (app-web-app/clj-app-cljs-web-app name)
      "cli" (cli/clj-cli name)
      "lib" (lib/clj-lib name)
      "node-cli" (node-cli/cljs-node-cli name)
      "node-lib" (node-lib/cljs-node-lib name)
      "park-filter" (park/clj-park-filter name)
      "web-app" (web-app/cljs-web-app name)
+     ;; TODO filter node-filter node-web-app web-app-filter web-app-lib
      (println "unrecognized type" type
               "\nusage:"
               "\nlein new wma-clj app"
