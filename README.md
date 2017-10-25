@@ -75,6 +75,15 @@ For the following, replace foo with your project name
         lein figwheel # or in Emacs: eval cider-figwheel.el, edit src/core/foo.cljs, C-c A-j
   (figwheel will open the browser automatically at http://localhost:3449/index.hml)
 
+8. generate a ClojureScript Web Browser Library
+    
+        lein new wma-clj foo web-lib
+        cd foo
+        npm install
+        lein doo phantom test # or lein doo phantom test once
+        lein figwheel # or in Emacs: eval cider-figwheel.el, edit src/core/foo.cljs, C-c A-j
+  (figwheel will open the browser automatically on local manual test html file)
+
 # future
 
      add +canvas +compojure +express +graphql +h2 +isomer +postgres +rest +ring +sqlite +static +ws
