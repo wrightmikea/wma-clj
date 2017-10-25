@@ -21,7 +21,14 @@
                 :compiler {:output-to "resources/public/js/compiled/{{name}}.js"
                            :main {{name}}.app
                            :optimizations :advanced
-                           :pretty-print false}}]}
+                           :pretty-print false}}
+               {:id "test"
+                :source-paths ["src" "test"]
+                :compiler {
+                           :main {{name}}.test-runner
+                           :output-to "resources/public/cljs/tests/all-tests.js"
+                           :output-dir "target/test-out"
+                           :target :nodejs}}]}
 
   :dependencies [[doo "0.1.7"]
                  [org.clojure/clojure "1.8.0"]

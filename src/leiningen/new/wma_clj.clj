@@ -6,7 +6,8 @@
             [wma-clj.gen.node-lib :as node-lib]
             [wma-clj.gen.park :as park]
             [wma-clj.gen.lib :as lib]
-            [wma-clj.gen.web-app :as web-app]))
+            [wma-clj.gen.web-app :as web-app]
+            [wma-clj.gen.web-lib :as web-lib]))
 
 (defn cljs-kafka-client
   "generates a ClojureScript node-kafka-client project"
@@ -28,7 +29,8 @@
      "node-lib" (node-lib/cljs-node-lib name)
      "park-filter" (park/clj-park-filter name)
      "web-app" (web-app/cljs-web-app name)
-     ;; TODO filter node-filter node-web-app web-app-filter web-app-lib
+     "web-lib" (web-lib/cljs-web-lib name)
+     ;; TODO filter node-filter node-web-app web-app-filter 
      (println "unrecognized type" type
               "\nusage:"
               "\nlein new wma-clj app"
@@ -37,5 +39,6 @@
               "\nlein new wma-clj node-lib"
               "\nlein new wma-clj park-filter"
               "\nlein new wma-clj lib"
-              "\nlein new wma-clj web-app"))))
+              "\nlein new wma-clj web-app"
+              "\nlein new wma-clj web-lib"))))
 

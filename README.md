@@ -1,6 +1,6 @@
 # wma-clj
 
-A Leiningen template to produce a clojure library and test 
+A Leiningen template to produce various clojure and/or clojurescript projects
 
 ## Installation
 
@@ -14,62 +14,84 @@ For the following, replace foo with your project name
 
 1. generate a Clojure Application
 
-    lein new wma-clj foo app 
-    cd foo 
-    lein do test, run 
+        lein new wma-clj foo app 
+        cd foo 
+        lein do test, run 
 
-2. generate a Clojure Command Line Interface Application
+2. generate a Clojure Application and ClojureScript Web Application
 
-    lein new wma-clj foo cli
-    cd foo 
-    lein do test, run 
+        lein new wma-clj foo app-web-app
+        cd foo 
+        lein do test, run 
+        npm install
+        lein doo phantom test # or lein doo phantom test once
+        lein figwheel # or in Emacs: eval cider-figwheel.el, edit src/core/foo.cljs, C-c A-j
+  (figwheel will open the browser automatically at http://localhost:3449/index.hml)
+        lein figwheel
 
-3. generate a Clojure Library
+3. generate a Clojure Command Line Interface Application
 
-    lein new wma-clj foo lib 
-    cd foo
-    lein do test
+        lein new wma-clj foo cli
+        cd foo 
+        lein do test, run 
 
-4. generate a ClojureScript Node.js Command Line Interface Application
+4. generate a Clojure Library
 
-    lein new wma-clj foo node-cli
-    cd foo
-    npm install
-    lein doo node test # or loop doo node test once
-    lein figwheel # or in Emacs: eval cider-figwheel.el, edit src/core/foo.cljs, C-c A-j
-    node target/js/compiled/foo.js
+        lein new wma-clj foo lib 
+        cd foo
+        lein do test
 
-5. generate a ClojureScript Node.js Library
+5. generate a ClojureScript Node.js Command Line Interface Application
 
-    lein new wma-clj foo node-lib
-    cd foo
-    npm install
-    lein doo node test # or loop doo node test once
-    use the generated target/js/compiled/foo.js in another JavaScript or ClojureScript project
+        lein new wma-clj foo node-cli
+        cd foo
+        npm install
+        lein doo node test # or loop doo node test once
+        lein figwheel # or in Emacs: eval cider-figwheel.el, edit src/core/foo.cljs, C-c A-j
+        node target/js/compiled/foo.js
 
-6. generate a Clojure Parallel Application Routed (by) Kafka (PARK) Microservices Filter
+6. generate a ClojureScript Node.js Library
 
-    lein new wma-clj foo park
-    cd foo
-    lein do compile, test, jar
-    deploy the target/foo-0.1.0-SNAPSHOT.jar file into a PARK container 
-    deploy a flow.edn configuration that uses com.example.foo.Filter
+        lein new wma-clj foo node-lib
+        cd foo
+        npm install
+        lein doo node test # or loop doo node test once
+        use the generated target/js/compiled/foo.js in another JavaScript or ClojureScript project
 
-7. generate a ClojureScript Web Browser Applicaion
+7. generate a Clojure Parallel Application Routed (by) Kafka (PARK) Microservices Filter
+
+        lein new wma-clj foo park
+        cd foo
+        lein do compile, test, jar
+        deploy the target/foo-0.1.0-SNAPSHOT.jar file into a PARK container 
+        deploy a flow.edn configuration that uses com.example.foo.Filter
+
+8. generate a ClojureScript Web Browser Applicaion
     
-    lein new wma-clj foo web-app
-    cd foo
-    npm install
-    lein doo phanrom test # or lein doo phantom test once
-    lein figwheel # or in Emacs: eval cider-figwheel.el, edit src/core/foo.cljs, C-c A-j
-    (figwheel will open the browser automatically at http://localhost:3449/index.hml)
+        lein new wma-clj foo web-app
+        cd foo
+        npm install
+        lein doo phantom test # or lein doo phantom test once
+        lein figwheel # or in Emacs: eval cider-figwheel.el, edit src/core/foo.cljs, C-c A-j
+  (figwheel will open the browser automatically at http://localhost:3449/index.hml)
 
-. future - add +canvas +compojure +express +graphql +h2 +isomer +postgres +rest +ring +sqlite +static +ws
-. future - add +fudje +midje +regress +speclj
-. future - generate a node-park-filter (for CLJS park container)
-. future - generate a node-web-toolkit CLJS (Lin/Mac/Win) desktop application
-. future - generate an Android CLJ application
-. future - generate an Android (possibly iOS) CLJS application
+8. generate a ClojureScript Web Browser Library
+    
+        lein new wma-clj foo web-lib
+        cd foo
+        npm install
+        lein doo phantom test # or lein doo phantom test once
+        lein figwheel # or in Emacs: eval cider-figwheel.el, edit src/core/foo.cljs, C-c A-j
+  (figwheel will open the browser automatically on local manual test html file)
+
+# future
+
+     add +canvas +compojure +express +graphql +h2 +isomer +postgres +rest +ring +sqlite +static +ws
+     add +fudje +midje +regress +speclj
+     generate a node-park-filter (for CLJS park container)
+     generate a node-web-toolkit CLJS (Lin/Mac/Win) desktop application
+     generate an Android CLJ application
+     generate an Android (possibly iOS) CLJS application
 
 ## License
 
