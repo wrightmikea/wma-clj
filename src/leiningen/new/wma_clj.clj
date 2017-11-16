@@ -30,15 +30,16 @@
      "park-filter" (park/clj-park-filter name)
      "web-app" (web-app/cljs-web-app name)
      "web-lib" (web-lib/cljs-web-lib name)
-     ;; TODO filter node-filter node-web-app web-app-filter 
+     ;; TODO filter node-filter node-web-app web-app-filter
+     ;; TODO lein-template
+     ;; TODO +graphql +h2 +postgresql +rest +rum +sqlite
      (println "unrecognized type" type
               "\nusage:"
-              "\nlein new wma-clj app"
-              "\nlein new wma-clj cli"
-              "\nlein new wma-clj node-cli"
-              "\nlein new wma-clj node-lib"
-              "\nlein new wma-clj park-filter"
-              "\nlein new wma-clj lib"
-              "\nlein new wma-clj web-app"
-              "\nlein new wma-clj web-lib"))))
-
+              "\nlein new wma-clj foo # defaults to: foo lib"
+              "\nlein new wma-clj foo cli"
+              "\nlein new wma-clj foo node-cli"
+              "\nlein new wma-clj foo node-lib"
+              "\nlein new wma-clj foo park-filter"
+              "\nlein new wma-clj foo lib"
+              "\nlein new wma-clj foo web-app"
+              "\nlein new wma-clj foo web-lib"))))
